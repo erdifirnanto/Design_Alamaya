@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="style.css">
   <title>Bootstrap</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel='stylesheet' href='https://unpkg.com/boxicons@latest/css/boxicons.min.css'>
@@ -487,24 +487,44 @@
 
           <!-- Pagination -->
           <nav aria-label="Page navigation">
-            <ul class="pagination justify-content-end">
-              <li class="page-item disabled">
-                <span class="page-link">Previous</span>
+            <ul class="pagination justify-content-end" style="align-items: center;">
+              <li class="page-item">
+                <span class="page-link" style="background-color: #082F1B; border-radius: 5px;"><i style="color: white;" class="fa-solid fa-chevron-left"></i></span>
               </li>
-              <li class="page-item active" aria-current="page">
-                <span class="page-link">1</span>
+              <li class="page-item" aria-current="page">
+                <span class="page-link1">1</span>
+              </li>
+               <li class="page-item">
+                <a class="page-link1">...</a>
               </li>
               <li class="page-item">
-                <a class="page-link" href="#">2</a>
+                <a class="page-link1" href="#">2</a>
               </li>
               <li class="page-item">
-                <a class="page-link" href="#">3</a>
+                <a class="page-link1" href="#">3</a>
               </li>
               <li class="page-item">
-                <a class="page-link" href="#">Next</a>
+                <a class="page-link1" href="#">4</a>
+              </li>
+               <li class="page-item">
+                <a class="page-link1">...</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link1" href="#">999</a>
+              </li>
+              <li class="page-item">
+                <a class="page-link" style="background-color: #082F1B; border-radius: 5px;" href="#"><i style="color: white;" class="fa-solid fa-chevron-right white"></i></a>
               </li>
             </ul>
           </nav>
+
+          <style>
+            .page-link1 {
+              text-decoration: none;
+              color: black;
+              margin: 0px 10px;
+            }
+          </style>
         </div>
       </div>
     </div>
@@ -512,9 +532,11 @@
 
   <div>
     <!-- Footer Start -->
-    <footer class="d-flex justify-content-center">
-      <a>Login as - Admin Hendri Kalijaga <br> Login as - Admin Hendri
-        Kalijaga</a>
+    <footer class="d-flex justify-content-center" style="background-color: #e0e0e6; height: 100px;">
+            <div style="font-size: 15px; text-align: center; align-content: center;">
+      <a style="color: #8F939A; text-decoration: none; text-align: center; justify-content: center;" href="alamaya.com">Login as - Admin Hendri Kalijaga</a> <br>
+      <a style="color: #8F939A; text-decoration: none; text-align: center; justify-content: center;" href="alamaya.com">Copyright © PT Indonesia Online Alamaya. All rights reserved.</a>
+      </div>
     </footer>
     <!-- End Of Footer -->
   </div>
