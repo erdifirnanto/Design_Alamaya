@@ -73,3 +73,105 @@
   background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
+
+.search-add-sort-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  /* Memberi jarak antar elemen */
+}
+
+.search-box {
+  position: relative;
+  /* Untuk memungkinkan ikon diatur absolut */
+  display: inline-block;
+}
+
+.search-box input {
+  width: 250px;
+  padding: 8px 12px;
+  padding-left: 35px;
+  /* Memberi ruang untuk ikon di dalam input */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-box .icon-search {
+  position: absolute;
+  left: 10px;
+  /* Posisi ikon di dalam input */
+  top: 50%;
+  transform: translateY(-50%);
+  /* Agar ikon tepat di tengah vertikal */
+  font-size: 16px;
+  color: #999;
+  /* Warna ikon */
+}
+
+.btn-add-client {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-add-project {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-dropdown {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.btn-search-box {
+  background-color: #e0e0e0;
+  color: black;
+}
+
+.user-photo {
+  width: 100%;
+  /* Lebar gambar akan menyesuaikan dengan lebar container */
+  height: 100%;
+  /* Tinggi gambar akan menyesuaikan dengan tinggi container */
+  object-fit: cover;
+  /* Memastikan gambar mengisi container tanpa terdistorsi */
+}
+
+/* Mengatur tampilan ikon sort */
+.sort-icons {
+  display: flex;
+  /* Menggunakan flexbox untuk mengatur tata letak */
+  flex-direction: column;
+  /* Mengatur arah kolom agar ikon ditata secara vertikal */
+  margin-left: 10px;
+  /* Jarak antara teks dan ikon */
+  align-items: center;
+  /* Pusatkan ikon secara horizontal */
+}
+
+/* Mengatur ukuran ikon */
+.sort-icons .fas {
+  font-size: 16px;
+  /* Ubah ukuran ikon sesuai kebutuhan */
+  cursor: pointer;
+  /* Ubah kursor saat hover */
+  transition: transform 0.3s ease, color 0.3s ease;
+  /* Tambahkan transisi untuk efek hover */
+  line-height: 1;
+  /* Menjaga ikon panah tidak terlalu tinggi */
+}
+
+/* Efek hover untuk ikon */
+.sort-icons .fas:hover {
+  color: #28a745;
+  /* Ubah warna saat hover menjadi hijau */
+  transform: scale(1.2);
+  /* Membesarkan ikon saat hover */
+}
+
+/* Menjaga agar teks dan ikon sejajar */
+th span {
+  line-height: 1.2;
+  /* Membuat teks sedikit lebih tinggi agar sejajar dengan ikon */
+}
