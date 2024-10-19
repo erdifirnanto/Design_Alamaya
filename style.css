@@ -46,11 +46,6 @@
   /* gap: 50px; */
 }
 
-.hover-card1:hover {
-  transform: translateY(-40px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
 .card-home:hover {
   transform: translateY(-40px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -66,10 +61,10 @@
   cursor: pointer;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  /* overflow: hidden; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  justify-content: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .user-icon {
