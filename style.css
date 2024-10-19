@@ -181,3 +181,110 @@ th span {
   line-height: 1.2;
   /* Membuat teks sedikit lebih tinggi agar sejajar dengan ikon */
 }
+
+.modal1 {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal1-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+
+#user-modal1:checked+.modal1 {
+  display: block;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: hand;
+}
+
+.modal1-content {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: white;
+  width: 300px;
+}
+
+.profile-card {
+  text-align: center;
+}
+
+.profile-picture {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+p {
+  margin: 5px 0;
+  color: gray;
+}
+
+.role {
+  display: inline-block;
+  padding: 4px 8px;
+  background-color: #979797;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.user-options {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.user-options li {
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.logout {
+  color: red;
+  font-size: 14px;
+  text-decoration: none;
+  text-align: left;
+  /* Flexbox akan menempatkan elemen ini ke kiri */
+  padding: 10px 0;
+  width: 100%;
+}
+
+.logout:hover {
+  text-decoration: underline;
+}
+
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}

@@ -56,39 +56,93 @@
               <li class="nav-item bullet-none mx-3">
                 <a class="fa-solid fa-gear text-light"></a>
               </li>
-              <li class="d-flex justify-content-center align-items-center user-icon"
-                style="width: 40px; height: 40px; border: solid 1px; color: white;">
-                <img src="images/foto_Rena.jpg" alt="User Image" class="user-photo img-fluid">
-              </li>
             </ul>
 
-          </div>
-        </div>
-      </nav>
-
-      <!-- Banner Content -->
-      <div class="container-fluid">
-        <div class="container">
-          <div class="centered-title">
-            <div class="row" style="margin-top: 100px;">
-              <div class="col-sm-2 col-lg-1 col-3">
-                <div>
-                  <img src="images/handwave.png" width="80%">
-                </div>
-              </div>
-              <div class="col-sm-10 col-lg-11 col-9 text-light">
-                <div>
-
-                </div>
-                <h3>Welcome Back, Hendri</h3>
-                <h6>This is an update from Alamaya Company</h6>
-              </div>
+            <!-- User Dropdown Option -->
+            <div class="dropdown">
+              <button class="user-icon" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <li class="d-flex justify-content-center align-items-center user-icon"
+                  style="width: 40px; height: 40px; border: solid 1px; color: white;">
+                  <label for="user-modal1" style="cursor: pointer;">
+                    <img src="images/foto_Rena.jpg" alt="User Image" class="user-photo img-fluid">
+                  </label>
+                </li>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <li class="user-info text-center">
+                  <img src="images/foto_Rena.jpg" alt="Profile Picture" class="profile-picture">
+                  <h6>Hendri Kalijaga</h6>
+                  <p class="email">hendrii.37@gmail.com</p>
+                  <span class="badge bg-secondary">Admin</span>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person"></i> Account</a></li>
+                <li><a class="dropdown-item" href="#"><i class="bi bi-person-plus"></i> Add Account</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Log out</a></li>
+              </ul>
             </div>
 
+            <style>
+              .user-icon {
+                border: none;
+                background: none;
+              }
+
+              .user-info {
+                padding: 10px;
+              }
+
+              .user-info .email {
+                color: gray;
+                font-size: 0.9em;
+              }
+
+              .dropdown-menu {
+                width: 250px;
+              }
+
+              .dropdown-item {
+                display: flex;
+                align-items: center;
+              }
+
+              .dropdown-item i {
+                margin-right: 10px;
+              }
+            </style>
           </div>
         </div>
+    </div>
+    </nav>
+
+    <!-- Banner Content -->
+    <div class="container-fluid">
+      <div class="container">
+        <div class="centered-title">
+          <div class="row" style="margin-top: 100px;">
+            <div class="col-sm-2 col-lg-1 col-3">
+              <div>
+                <img src="images/handwave.png" width="80%">
+              </div>
+            </div>
+            <div class="col-sm-10 col-lg-11 col-9 text-light">
+              <div>
+
+              </div>
+              <h3>Welcome Back, Hendri</h3>
+              <h6>This is an update from Alamaya Company</h6>
+            </div>
+          </div>
+
+        </div>
       </div>
-      <!-- End Of Content Banner -->
+    </div>
+    <!-- End Of Content Banner -->
 
     </div>
     <!-- Navbar End -->
