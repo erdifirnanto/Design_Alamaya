@@ -115,10 +115,13 @@
     const overlay = document.querySelector('.circle-overlay');
     const mainPage = document.getElementById('main-page');
     const title = document.getElementById('title');
+    const logo = document.getElementById('logo');
+    const body = document.body;
+
 
     // Hentikan tampilan halaman utama
     const changeTitleColor = () => {
-      title.style.color = 'white'; // Ubah warna judul jadi putih saat lingkaran menyentuh
+      logo.style.filter = 'invert(1)'; // Ubah logo jadi putih
     };
 
     // Hentikan tampilan lingkaran
@@ -139,7 +142,7 @@
       if (
         circleRect.bottom >= titleRect.top &&
         circleRect.top <= titleRect.bottom &&
-        title.style.color !== 'white' // hanya ubah warna jika belum putih
+        logo.style.filter !== 'invert(1)' // Ubah hanya jika belum berubah
       ) {
         changeTitleColor();
       }
