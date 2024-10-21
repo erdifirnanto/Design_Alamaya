@@ -40,20 +40,22 @@
                                     style="top: 70%; right: 10px; cursor: pointer; transform: translateY(-50%);"></i>
                             </div>
 
-                            <button type="submit" style="width: 100%; height: 20%;"
-                                class=" btn btn-dark col-12">Login</button>
+                            <button type="submit" style="width: 100%; height: 50px;"
+                                class="btn btn-dark col-12">Login</button>
                         </form>
                     </div>
 
                 </div>
                 <div class="col-sm-7 px-0 d-none d-sm-block">
                     <img src="images/login image1.png" alt="Login image" class="w-100 vh-100"
-                        style="object-fit: cover; object-position: left;">`
+                        style="object-fit: cover; object-position: left;">
                 </div>
             </div>
         </div>
     </section>
-    <script src="https://kit.fontawesome.com/19ad68a1da.js" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/19ad68a1da.js" crossorigin="anonymous"></script>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
             const togglePassword = document.querySelector('#togglePassword');
             const password = document.querySelector('#exampleInputPassword1');
@@ -65,10 +67,18 @@
 
                 // Toggle the eye / eye slash icon
                 this.classList.toggle('fa-eye-slash');
+
+                // Toggle between eye and eye-slash icon
+                if (type === 'text') {
+                    this.classList.remove('fa-eye');
+                    this.classList.add('fa-eye-slash');
+                } else {
+                    this.classList.remove('fa-eye-slash');
+                    this.classList.add('fa-eye');
+                }
             });
         });
     </script>
-
 
 </body>
 
