@@ -212,7 +212,7 @@ th span {
   width: 80%;
 }
 
-#user-modal1:checked + .modal1 {
+#user-modal1:checked+.modal1 {
   display: block;
 }
 
