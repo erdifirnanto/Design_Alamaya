@@ -46,10 +46,10 @@
   /* gap: 50px; */
 }
 
-.card-home:hover {
+/* .card-home:hover {
   transform: translateY(-40px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+} */
 
 .card-home {
   height: 200px;
@@ -65,6 +65,13 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
+}
+
+.card-home.hovered {
+  transform: translateY(-40px);
+  /* Menggeser elemen ke atas */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  /* Menambahkan bayangan */
 }
 
 .user-icon {
