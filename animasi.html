@@ -22,6 +22,14 @@
   </head>
 
   <body>
+    <div
+      id="bg-white"
+      style="
+        width: 100vw; /* 100% dari lebar viewport */
+        height: 100vh; /* 100% dari tinggi viewport */
+        background-color: red;
+      "
+    ></div>
     <div class="content">
       <div id="title" class>
         <!-- Logo 1 (hitam, awal) -->
@@ -129,6 +137,7 @@
       const title = document.getElementById("title");
       const logoBlack = document.getElementById("logo-black"); // Logo hitam (awal)
       const logoWhite = document.getElementById("logo-white"); // Logo putih (setelah animasi)
+      const bgWhite = document.getElementById("bg-white"); // Logo putih (setelah animasi)
 
       // Fungsi untuk mengganti logo
       const changeLogo = () => {
@@ -141,6 +150,7 @@
         if (event.animationName === "circleExpand") {
           overlay.style.display = "none"; // Sembunyikan lingkaran
           title.style.display = "none"; // Sembunyikan judul setelah lingkaran menutupi layar
+          bgWhite.style.display = "none"; // Tampilkan logo putih
           mainPage.style.display = "block"; // Tampilkan halaman utama
         }
       });
