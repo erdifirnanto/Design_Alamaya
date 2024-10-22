@@ -138,15 +138,23 @@
       const circleRect = overlay.getBoundingClientRect();
       const titleRect = title.getBoundingClientRect();
 
+      // Fungsi untuk mengganti logo dan mengubah warna
+      const changeLogoAndBackground = () => {
+        logo.src = 'images/alamaya_logo.png'; // Ganti logo dengan logo baru
+        logo.style.filter = 'invert(1)'; // Mengubah logo jadi warna putih
+        body.style.backgroundColor = '#3498db'; // Ubah background jadi biru
+      };
+
       // Periksa apakah lingkaran menyentuh judul
       if (
         circleRect.bottom >= titleRect.top &&
         circleRect.top <= titleRect.bottom &&
-        logo.style.filter !== 'invert(1)' // Ubah hanya jika belum berubah
+        logo.src.indexOf('alamaya_logo.png') === -1 // Cek apakah logo belum diganti
       ) {
-        changeTitleColor();
+        changeLogoAndBackground(); // Ganti logo dan ubah warna background
       }
     };
+
 
     // Cek setiap frame
     const checkAnimationFrame = () => {
