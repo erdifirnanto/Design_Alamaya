@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Alamaya Project - Login Page</title>
+
 </head>
 
 <body>
@@ -34,19 +35,19 @@
                             </div>
                             <div class="mb-3 position-relative">
                                 <label for="exampleInputPassword1" class="form-label"><strong>Password</strong></label>
-                                <input style="height: 55px; font-weight: bold;" type="password" class="form-control"
+                                <input type="password" style="height: 55px; font-weight: bold;" class="form-control"
                                     id="exampleInputPassword1">
                                 <i class="fas fa-eye position-absolute" id="togglePassword"
                                     style="top: 70%; right: 10px; cursor: pointer; transform: translateY(-50%);"></i>
                             </div>
                             <div class="mb-3 d-flex justify-content-end">
-                                <a href="/forgot_password.html" class="text-decoration-none"
+                                <a href="forgotpassword.html" class="text-decoration-none"
                                     style="color: black;"><strong>Forgot
                                         Password?</strong></a>
                             </div>
 
-                            <button type="submit" style="width: 100%; height: 50px;"
-                                class="btn btn-dark col-12">Login</button>
+                            <button type="button" style="width: 100%; height: 50px;" class="btn btn-dark col-12"
+                                onclick="window.location.href='homepage.html';">Login</button>
                         </form>
                     </div>
 
@@ -60,31 +61,23 @@
     </section>
 
     <script src="https://kit.fontawesome.com/19ad68a1da.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const togglePassword = document.querySelector('#togglePassword');
-            const password = document.querySelector('#exampleInputPassword1');
+        $(document).ready(function () {
+            $('#togglePassword').click(function () {
+                const passwordField = $('#exampleInputPassword1');
 
-            togglePassword.addEventListener('click', function () {
-                // Toggle the type attribute
-                const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
-                password.setAttribute('type', type);
-
-                // Toggle the eye / eye slash icon
-                this.classList.toggle('fa-eye-slash');
-
-                // Toggle between eye and eye-slash icon
-                if (type === 'text') {
-                    this.classList.remove('fa-eye');
-                    this.classList.add('fa-eye-slash');
+                // Toggle antara tipe 'password' dan 'text'
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text');
+                    $(this).removeClass('fa-eye').addClass('fa-eye-slash'); // Ganti ikon menjadi mata tertutup
                 } else {
-                    this.classList.remove('fa-eye-slash');
-                    this.classList.add('fa-eye');
+                    passwordField.attr('type', 'password');
+                    $(this).removeClass('fa-eye-slash').addClass('fa-eye'); // Kembali ke ikon mata terbuka
                 }
             });
         });
     </script>
-
 </body>
 
 </html>

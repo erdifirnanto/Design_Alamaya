@@ -10,6 +10,7 @@
   <title>Bootstrap</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel='stylesheet' href='https://unpkg.com/boxicons@latest/css/boxicons.min.css'>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,16 +31,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Client</a></b>
+                <b><a class="nav-link" href="homepage.html">Client</a></b>
               </li>
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Project</a></b>
+                <b><a class="nav-link" href="alamayaprojectpage.html">Project</a></b>
               </li>
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Domain</a></b>
+                <b><a class="nav-link" href="domainpage.html">Domain</a></b>
               </li>
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Teams</a></b>
+                <b><a class="nav-link" href="alamayateamspage.html">Teams</a></b>
               </li>
             </ul>
             <ul class="navbar-nav align-items-center" style="margin-left: -8%;">
@@ -348,17 +349,18 @@
                   <a style="color: red;" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </button>
                 <!-- Add Project Button -->
-                <button class="btn btn-add-project btn1hvr" data-bs-toggle="modal" data-bs-target="#addProjectModal">Add
+                <button class="btn btn-add-project btn1hvr" data-bs-toggle="modal"
+                  data-bs-target="#addProjectonProgressModal">Add
                   Project <i class="fa fa-plus"></i>
                 </button>
 
-                <!-- Add Project Modal -->
-                <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel"
-                  aria-hidden="true">
-                  <div class="modal-dialog">
+                <!-- Add Project on Progress Modal -->
+                <div class="modal fade" id="addProjectonProgressModal" tabindex="-1"
+                  aria-labelledby="addProjectonProgressModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="addProjectModalLabel">Add
+                        <h5 class="modal-title" id="addProjectonProgressModalLabel">Add
                           Project</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
@@ -371,10 +373,7 @@
                               <input type="text" class="form-control" id="projectName"
                                 placeholder="Enter the client name">
                             </div>
-                          </div>
-
-                          <!-- PIC and Product Category -->
-                          <div class="row mb-3">
+                            <!-- Product Category -->
                             <div class="col">
                               <label for="productCategory" class="form-label">Category Product</label>
                               <select class="form-select" id="productCategory">
@@ -384,44 +383,54 @@
                                 <option value="2">Category 2</option>
                               </select>
                             </div>
-                            <div class="col">
-                              <label for="picName" class="form-label">PIC</label>
-                              <select class="form-select" id="picName">
-                                <option selected>Select the PIC name</option>
-                                <option value="1">PIC 1</option>
-                                <option value="2">PIC 2</option>
-                              </select>
-                            </div>
                           </div>
 
-                          <!-- Tanggal Project Masuk -->
+                          <!-- Price Model & Price -->
                           <div class="row mb-3">
                             <div class="col">
-                              <label for="tanggalprojectmasuk" class="form-label">Tanggal Project
-                                Masuk</label>
-                              <input type="text" class="form-control" id="tanggalprojectmasuk"
-                                placeholder="Enter the client's phone number">
+                              <label for="priceModel" class="form-label">Price Model</label>
+                              <select class="form-select" id="priceModel">
+                                <option selected>Select the Price</option>
+                                <option value="1">Price 1</option>
+                                <option value="2">Price 2</option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <label for="price" class="form-label">Price</label>
+                              <div class="input-group">
+                                <span class="input-group-text">IDR</span>
+                                <input type="text" class="form-control" id="price" placeholder="Enter price">
+                              </div>
                             </div>
                           </div>
 
-                          <!-- Deadline -->
-                          <div class="mb-3">
-                            <label for="deadline" class="form-label">Deadline</label>
-                            <input type="text" class="form-control" id="deadline"
-                              placeholder="Enter the client's company address">
+                          <!-- Start Date -->
+                          <div class="row mb-3">
+                            <div class="col">
+                              <label for="startDate" class="form-label">Start Date</label>
+                              <div class="input-group">
+                                <input type="date" class="form-control datepicker" id="startDate"
+                                  placeholder="Choose Date">
+                              </div>
+                            </div>
+                            <div class="col">
+                              <label for="expiredDate" class="form-label">Expired Date</label>
+                              <div class="input-group">
+                                <input type="date" class="form-control" id="expiredDate" placeholder="Choose Date">
+                              </div>
+                            </div>
                           </div>
+
 
                           <!-- Disclaimer -->
                           <div class="form-check mb-3">
                             <input type="checkbox" class="form-check-input" id="termsCheck">
                             <label class="form-check-label" for="termsCheck">
                               By registering, you agree to the terms and
-                              conditions that apply.
+                              conditions that apply. Check again and make
+                              sure the form is completely filled out.
                             </label>
                           </div>
-
-                          <div class="form-text mb-3">Check again and make
-                            sure the form is completely filled out</div>
 
                           <!-- Submit Button -->
                           <button type="submit" class="btn btn-dark w-100">Add
