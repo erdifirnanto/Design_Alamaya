@@ -1,55 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Circle Animation</title>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Animation</title>
+  </head>
 
-<body>
-  <div class="content">
-    <div id="title" class="">
-      <img src="images/logo_alamaya.png" height="40" style="margin: 35px 0px;">
+  <body>
+    <div class="content">
+      <div id="title" class>
+        <!-- Logo 1 (hitam, awal) -->
+        <img id="logo-black" src="images/logo_alamaya.png" height="40"
+          style="margin: 35px 0px;">
+
+        <!-- Logo 2 (putih, untuk setelah animasi) -->
+        <img id="logo-white" src="/images/logo_alamaya_putih.png" height="40"
+          style="margin: 35px 0px; display: none;">
+      </div>
+
     </div>
-  </div>
-  <div class="circle-overlay"></div>
+    <div class="circle-overlay"></div>
 
-  <div class="main-page" id="main-page">
-    <h1>Welcome to the Main Page</h1>
-    <p>This is the content of the main page.</p>
-  </div>
+    <div class="main-page" id="main-page">
+      <h1>Welcome to the Main Page</h1>
+      <p>This is the content of the main page.</p>
+    </div>
 
-</body>
+  </body>
 
-<style>
-  body,
-  html {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffffff;
-    /* Background utama putih */
-    font-family: Arial, sans-serif;
-  }
-
+  <style>
+  /* Hilangkan style body dan html */
+  
+  /* Atur konten untuk tetap di tengah */
   .content {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 20;
-    /* Z-index tinggi agar judul berada di depan lingkaran */
     text-align: center;
   }
 
   #title {
     font-size: 3em;
     color: black;
-    /* Warna awal hitam */
     transition: color 0.5s ease-in-out;
-    /* Transisi warna cepat saat lingkaran menyentuh */
   }
 
   .circle-overlay {
@@ -59,28 +55,23 @@
     background-color: #3498db;
     border-radius: 50%;
     top: -100px;
-    /* Mulai dari atas */
     left: 50%;
     transform: translate(-50%, 0);
     animation: dropBounce 2s ease-in-out forwards, circleExpand 1s ease-in-out forwards 2s;
     z-index: 10;
-    /* Z-index lebih rendah dari judul */
   }
 
   @keyframes dropBounce {
     0% {
       top: -100px;
-      /* Mulai dari luar layar, di atas */
     }
 
     50% {
       top: calc(50% - 25px);
-      /* Pantulan pertama di bawah judul */
     }
 
     100% {
       top: calc(50% + 50px);
-      /* Posisi akhir bouncing */
     }
   }
 
@@ -110,54 +101,36 @@
   }
 </style>
 
-<script>
-  window.onload = function () {
-    const overlay = document.querySelector('.circle-overlay');
-    const mainPage = document.getElementById('main-page');
-    const title = document.getElementById('title');
-    const logo = document.getElementById('logo');
-    const body = document.body;
+  <script>
+window.onload = function () {
+  const overlay = document.querySelector('.circle-overlay');
+  const mainPage = document.getElementById('main-page');
+  const title = document.getElementById('title');
+  const logoBlack = document.getElementById('logo-black'); // Logo hitam (awal)
+  const logoWhite = document.getElementById('logo-white'); // Logo putih (setelah animasi)
 
-
-    // Hentikan tampilan halaman utama
-    const changeTitleColor = () => {
-      logo.style.filter = 'invert(1)'; // Ubah logo jadi putih
-    };
-
-    // Hentikan tampilan lingkaran
-    overlay.addEventListener('animationend', (event) => {
-      if (event.animationName === 'circleExpand') {
-        overlay.style.display = 'none'; // Sembunyikan lingkaran
-        title.style.display = 'none';   // Sembunyikan judul setelah lingkaran menutupi layar
-        mainPage.style.display = 'block'; // Tampilkan halaman utama
-      }
-    });
-
-    // Deteksi sentuhan lingkaran dengan judul
-    const checkCircleTouch = () => {
-      const circleRect = overlay.getBoundingClientRect();
-      const titleRect = title.getBoundingClientRect();
-
-      // Periksa apakah lingkaran menyentuh judul
-      if (
-        circleRect.bottom >= titleRect.top &&
-        circleRect.top <= titleRect.bottom &&
-        logo.style.filter !== 'invert(1)' // Ubah hanya jika belum berubah
-      ) {
-        changeTitleColor();
-      }
-    };
-
-    // Cek setiap frame
-    const checkAnimationFrame = () => {
-      checkCircleTouch();
-      requestAnimationFrame(checkAnimationFrame);
-    };
-
-    // Mulai cek
-    requestAnimationFrame(checkAnimationFrame);
+  // Fungsi untuk mengganti logo
+  const changeLogo = () => {
+    logoBlack.style.display = 'none';  // Sembunyikan logo hitam
+    logoWhite.style.display = 'block'; // Tampilkan logo putih
   };
 
+  // Hentikan tampilan lingkaran dan halaman utama
+  overlay.addEventListener('animationend', (event) => {
+    if (event.animationName === 'circleExpand') {
+      overlay.style.display = 'none'; // Sembunyikan lingkaran
+      title.style.display = 'none';   // Sembunyikan judul setelah lingkaran menutupi layar
+      mainPage.style.display = 'block'; // Tampilkan halaman utama
+    }
+  });
+
+  // Deteksi kapan animasi circleExpand dimulai
+  overlay.addEventListener('animationstart', (event) => {
+    if (event.animationName === 'circleExpand') {
+      changeLogo(); // Ubah logo saat lingkaran mulai membesar
+    }
+  });
+};
 </script>
 
 </html>
