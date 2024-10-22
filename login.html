@@ -15,8 +15,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
     <title>Alamaya Project - Login Page</title>
-
-</head>
+  </head>
 
   <body>
     <section class="vh-100">
@@ -67,80 +66,57 @@
                     "
                   ></i>
                 </div>
-                    <div class="d-flex justify-content-center mt-4">
-                        <form style="width: 21rem;">
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label"><strong>Email</strong></label>
-                                <input style="height: 55px; font-weight: bold;" type="email" class="form-control"
-                                    id="exampleInputEmail1" placeholder="Enter email" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text text-danger"></div>
-                            </div>
-                            <div class="mb-3 position-relative">
-                                <label for="exampleInputPassword1" class="form-label"><strong>Password</strong></label>
-                                <input type="password" style="height: 55px; font-weight: bold;" class="form-control"
-                                    id="exampleInputPassword1">
-                                <i class="fas fa-eye position-absolute" id="togglePassword"
-                                    style="top: 70%; right: 10px; cursor: pointer; transform: translateY(-50%);"></i>
-                            </div>
-                            <div class="mb-3 d-flex justify-content-end">
-                                <a href="forgotpassword.html" class="text-decoration-none"
-                                    style="color: black;"><strong>Forgot
-                                        Password?</strong></a>
-                            </div>
-
-                            <button type="button" style="width: 100%; height: 50px;" class="btn btn-dark col-12"
-                                onclick="validateEmail()">Login</button>
-                        </form>
-                    </div>
+                <div class="mb-3 d-flex justify-content-end">
+                  <a
+                    href="/forgot_password.html"
+                    class="text-decoration-none"
+                    style="color: black"
+                    ><strong>Forgot Password?</strong></a
+                  >
                 </div>
 
-                <script>
-                    function validateEmail() {
-                        const emailInput = document.getElementById('exampleInputEmail1');
-                        const emailHelp = document.getElementById('emailHelp');
-                        const email = emailInput.value;
-                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Pola email sederhana
-
-                        if (!emailPattern.test(email)) {
-                            // Jika email tidak valid, tampilkan pesan kesalahan
-                            emailHelp.textContent = 'Your email is not valid';
-                            emailInput.classList.add('is-invalid'); // Tambahkan kelas 'is-invalid' untuk efek Bootstrap
-                        } else {
-                            // Jika email valid, kosongkan pesan kesalahan
-                            emailHelp.textContent = '';
-                            emailInput.classList.remove('is-invalid'); // Hapus kelas 'is-invalid'
-                            alert('Email valid, redirecting to homepage...');
-                            window.location.href = 'homepage.html'; // Alihkan ke halaman homepage
-                        }
-                    }
-                </script>
-
-                <div class="col-sm-7 px-0 d-none d-sm-block">
-                    <img src="images/login image1.png" alt="Login image" class="w-100 vh-100"
-                        style="object-fit: cover; object-position: left;">
-                </div>
+                <button
+                  type="submit"
+                  style="width: 100%; height: 50px"
+                  class="btn btn-dark col-12"
+                >
+                  Login
+                </button>
+              </form>
             </div>
+          </div>
+          <div class="col-sm-7 px-0 d-none d-sm-block">
+            <img
+              src="images/login image1.png"
+              alt="Login image"
+              class="w-100 vh-100"
+              style="object-fit: cover; object-position: left"
+            />
+          </div>
         </div>
+      </div>
     </section>
 
-    <script src="https://kit.fontawesome.com/19ad68a1da.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/19ad68a1da.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-        $(document).ready(function () {
-            $('#togglePassword').click(function () {
-                const passwordField = $('#exampleInputPassword1');
+      $(document).ready(function () {
+        $("#togglePassword").click(function () {
+          const passwordField = $("#exampleInputPassword1");
 
-                // Toggle antara tipe 'password' dan 'text'
-                if (passwordField.attr('type') === 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).removeClass('fa-eye').addClass('fa-eye-slash'); // Ganti ikon menjadi mata tertutup
-                } else {
-                    passwordField.attr('type', 'password');
-                    $(this).removeClass('fa-eye-slash').addClass('fa-eye'); // Kembali ke ikon mata terbuka
-                }
-            });
+          // Toggle antara tipe 'password' dan 'text'
+          if (passwordField.attr("type") === "password") {
+            passwordField.attr("type", "text");
+            $(this).removeClass("fa-eye").addClass("fa-eye-slash"); // Ganti ikon menjadi mata tertutup
+          } else {
+            passwordField.attr("type", "password");
+            $(this).removeClass("fa-eye-slash").addClass("fa-eye"); // Kembali ke ikon mata terbuka
+          }
         });
+      });
     </script>
-</body>
-
+  </body>
 </html>
