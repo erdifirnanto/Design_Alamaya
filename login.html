@@ -30,8 +30,8 @@
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label"><strong>Email</strong></label>
                                 <input style="height: 55px; font-weight: bold;" type="email" class="form-control"
-                                    id="exampleInputEmail1" aria-describedby="emailHelp">
-                                <div id="emailHelp" class="form-text"></div>
+                                    id="exampleInputEmail1" placeholder="Enter email" aria-describedby="emailHelp">
+                                <div id="emailHelp" class="form-text text-danger"></div>
                             </div>
                             <div class="mb-3 position-relative">
                                 <label for="exampleInputPassword1" class="form-label"><strong>Password</strong></label>
@@ -47,11 +47,32 @@
                             </div>
 
                             <button type="button" style="width: 100%; height: 50px;" class="btn btn-dark col-12"
-                                onclick="window.location.href='homepage.html';">Login</button>
+                                onclick="validateEmail()">Login</button>
                         </form>
                     </div>
-
                 </div>
+
+                <script>
+                    function validateEmail() {
+                        const emailInput = document.getElementById('exampleInputEmail1');
+                        const emailHelp = document.getElementById('emailHelp');
+                        const email = emailInput.value;
+                        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Pola email sederhana
+
+                        if (!emailPattern.test(email)) {
+                            // Jika email tidak valid, tampilkan pesan kesalahan
+                            emailHelp.textContent = 'Your email is not valid';
+                            emailInput.classList.add('is-invalid'); // Tambahkan kelas 'is-invalid' untuk efek Bootstrap
+                        } else {
+                            // Jika email valid, kosongkan pesan kesalahan
+                            emailHelp.textContent = '';
+                            emailInput.classList.remove('is-invalid'); // Hapus kelas 'is-invalid'
+                            alert('Email valid, redirecting to homepage...');
+                            window.location.href = 'homepage.html'; // Alihkan ke halaman homepage
+                        }
+                    }
+                </script>
+
                 <div class="col-sm-7 px-0 d-none d-sm-block">
                     <img src="images/login image1.png" alt="Login image" class="w-100 vh-100"
                         style="object-fit: cover; object-position: left;">

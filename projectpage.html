@@ -369,13 +369,14 @@
                           <!-- Project Name -->
                           <div class="row mb-3">
                             <div class="col">
-                              <label for="projectName" class="form-label">Project Name</label>
+                              <label for="projectName" class="form-label" style="font-size: 0.7em;">Project Name</label>
                               <input type="text" class="form-control" id="projectName"
                                 placeholder="Enter the client name">
                             </div>
                             <!-- Product Category -->
                             <div class="col">
-                              <label for="productCategory" class="form-label">Category Product</label>
+                              <label for="productCategory" class="form-label" style="font-size: 0.7em;">Category
+                                Product</label>
                               <select class="form-select" id="productCategory">
                                 <option selected>Select a Product
                                   category</option>
@@ -388,7 +389,7 @@
                           <!-- Price Model & Price -->
                           <div class="row mb-3">
                             <div class="col">
-                              <label for="priceModel" class="form-label">Price Model</label>
+                              <label for="priceModel" class="form-label" style="font-size: 0.7em;">Price Model</label>
                               <select class="form-select" id="priceModel">
                                 <option selected>Select the Price</option>
                                 <option value="1">Price 1</option>
@@ -396,7 +397,7 @@
                               </select>
                             </div>
                             <div class="col">
-                              <label for="price" class="form-label">Price</label>
+                              <label for="price" class="form-label" style="font-size: 0.7em;">Price</label>
                               <div class="input-group">
                                 <span class="input-group-text">IDR</span>
                                 <input type="text" class="form-control" id="price" placeholder="Enter price">
@@ -407,14 +408,14 @@
                           <!-- Start Date -->
                           <div class="row mb-3">
                             <div class="col">
-                              <label for="startDate" class="form-label">Start Date</label>
+                              <label for="startDate" class="form-label" style="font-size: 0.7em;">Start Date</label>
                               <div class="input-group">
                                 <input type="date" class="form-control datepicker" id="startDate"
                                   placeholder="Choose Date">
                               </div>
                             </div>
                             <div class="col">
-                              <label for="expiredDate" class="form-label">Expired Date</label>
+                              <label for="expiredDate" class="form-label" style="font-size: 0.7em;">Expired Date</label>
                               <div class="input-group">
                                 <input type="date" class="form-control" id="expiredDate" placeholder="Choose Date">
                               </div>
@@ -433,13 +434,20 @@
                           </div>
 
                           <!-- Submit Button -->
-                          <button type="submit" class="btn btn-dark w-100">Add
+                          <button type="submit" class="btn btn-dark w-100" onclick="showAlert()">Add
                             Project</button>
                         </form>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <script>
+                  function showAlert() {
+                    // Menampilkan notifikasi bahwa data berhasil ditambahkan
+                    alert('Data berhasil ditambahkan!');
+                  }
+                </script>
 
                 <!-- Dropdown Button -->
                 <button class="btn btn-dropdown dropdown-toggle srtby" type="button" id="dropdownMenuButton"
@@ -791,6 +799,7 @@
       });
     });
   </script>
+
 </body>
 
 </html>
