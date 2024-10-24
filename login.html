@@ -16,12 +16,13 @@
 
     </head>
 
-<body>
+    <body>
 
-    <section class="vh-100">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="row w-100">
-                <div class="col-sm-5 d-flex flex-column justify-content-center align-items-center">
+        <section class="vh-100">
+            <div class="h-100 d-flex align-items-center justify-content-center">
+                <div class="row w-100">
+                    <div
+                        class="col-sm-5 d-flex flex-column justify-content-center align-items-center">
 
                         <div class="px-5 ms-xl-4">
                             <span
@@ -109,16 +110,16 @@
             $('#togglePassword').click(function () {
                 const passwordField = $('#exampleInputPassword1');
 
-                // Toggle antara tipe 'password' dan 'text'
-                if (passwordField.attr('type') === 'password') {
-                    passwordField.attr('type', 'text');
-                    $(this).removeClass('fa-eye').addClass('fa-eye-slash'); // Ganti ikon menjadi mata tertutup
-                } else {
-                    passwordField.attr('type', 'password');
-                    $(this).removeClass('fa-eye-slash').addClass('fa-eye'); // Kembali ke ikon mata terbuka
-                }
-            });
+          // Toggle antara tipe 'password' dan 'text'
+          if (passwordField.attr("type") === "password") {
+            passwordField.attr("type", "text");
+            $(this).removeClass("fa-eye").addClass("fa-eye-slash"); // Ganti ikon menjadi mata tertutup
+          } else {
+            passwordField.attr("type", "password");
+            $(this).removeClass("fa-eye-slash").addClass("fa-eye"); // Kembali ke ikon mata terbuka
+          }
         });
+      });
     </script>
     </body>
 
