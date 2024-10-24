@@ -30,16 +30,16 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Client</a></b>
+                <b><a class="nav-link" href="homepage.html">Client</a></b>
               </li>
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Project</a></b>
+                <b><a class="nav-link" href="alamayaprojectpage.html">Project</a></b>
               </li>
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Domain</a></b>
+                <b><a class="nav-link" href="domainpage.html">Domain</a></b>
               </li>
               <li class="nav-item">
-                <b><a class="nav-link" href="#">Teams</a></b>
+                <b><a class="nav-link" href="alamayateamspage.html">Teams</a></b>
               </li>
             </ul>
             <ul class="navbar-nav align-items-center" style="margin-left: -8%;">
@@ -209,7 +209,7 @@
                   </div>
                 </div>
               </div>
-              <a href="#" class="text-dark" style="text-decoration: none;">
+              <a href="homepage.html" class="text-dark" style="text-decoration: none;">
                 <h6 class="d-flex justify-content-center" style="margin-top: -20px;">Detail
                   stats <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i>
                 </h6>
@@ -306,7 +306,7 @@
                 </div>
               </div>
             </div>
-            <a href="https://google.com" class="text-dark" style="text-decoration: none;">
+            <a href="projectpage.html" class="text-dark" style="text-decoration: none;">
               <h6 class="d-flex justify-content-center" style=" margin-top: -20px;">Detail
                 stats <i class="fa-solid fa-arrow-right" style="margin-left: 5px;"></i>
               </h6>
@@ -367,36 +367,52 @@
                 <button class="btn btn-dropdown srtby" type="button" aria-expanded="false">
                   <a style="color: red;" href="#"><i class="fa fa-trash" aria-hidden="true"></i></a>
                 </button>
-                <!-- Add Project Button -->
-                <button class="btn btn-add-project btn1hvr" data-bs-toggle="modal" data-bs-target="#addProjectModal">Add
-                  Project <i class="fa fa-plus"></i>
+                <!-- Add Client Button -->
+                <button class="btn btn-add-client btn1hvr" data-bs-toggle="modal" data-bs-target="#addClientModal">Add
+                  Client <i class="fa fa-plus"></i>
                 </button>
 
-                <!-- Add Project Modal -->
-                <div class="modal fade" id="addProjectModal" tabindex="-1" aria-labelledby="addProjectModalLabel"
+                <!-- Add Client Modal -->
+                <div class="modal fade" id="addClientModal" tabindex="-1" aria-labelledby="addClientModalLabel"
                   aria-hidden="true">
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="addProjectModalLabel">Add
-                          Project</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <div class="modal-header" style="display: block;">
+                        <h5 class="modal-title" id="addClientModalLabel">Add Client</h5>
+                        <p style="margin-top: 2px;">Fill in some details to start adding clients</p>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                          style="position: absolute; right: 10px; top: 10px;"></button>
                       </div>
+
                       <div class="modal-body">
                         <form>
-                          <!-- Project Name -->
+                          <!-- Client Name & Company Name -->
                           <div class="row mb-3">
                             <div class="col">
-                              <label for="projectName" class="form-label">Project Name</label>
-                              <input type="text" class="form-control" id="projectName"
+                              <label for="clientName" class="form-label" style="font-size: 0.7em;">CLIENT NAME</label>
+                              <input type="text" class="form-control" id="clientName"
                                 placeholder="Enter the client name">
+                            </div>
+                            <div class="col">
+                              <label for="companyName" class="form-label" style="font-size: 0.7em;">COMPANY NAME</label>
+                              <input type="text" class="form-control" id="companyName"
+                                placeholder="Enter the company name">
                             </div>
                           </div>
 
                           <!-- PIC and Product Category -->
                           <div class="row mb-3">
                             <div class="col">
-                              <label for="productCategory" class="form-label">Category Product</label>
+                              <label for="picName" class="form-label" style="font-size: 0.7em;">PIC</label>
+                              <select class="form-select" id="picName">
+                                <option selected>Select the PIC name</option>
+                                <option value="1">PIC 1</option>
+                                <option value="2">PIC 2</option>
+                              </select>
+                            </div>
+                            <div class="col">
+                              <label for="productCategory" class="form-label" style="font-size: 0.7em;">CATEGORY
+                                PRODUCT</label>
                               <select class="form-select" id="productCategory">
                                 <option selected>Select a Product
                                   category</option>
@@ -404,30 +420,26 @@
                                 <option value="2">Category 2</option>
                               </select>
                             </div>
-                            <div class="col">
-                              <label for="picName" class="form-label">PIC</label>
-                              <select class="form-select" id="picName">
-                                <option selected>Select the PIC name</option>
-                                <option value="1">PIC 1</option>
-                                <option value="2">PIC 2</option>
-                              </select>
-                            </div>
                           </div>
 
-                          <!-- Tanggal Project Masuk -->
+                          <!-- Email & Phone -->
                           <div class="row mb-3">
                             <div class="col">
-                              <label for="tanggalprojectmasuk" class="form-label">Tanggal Project
-                                Masuk</label>
-                              <input type="text" class="form-control" id="tanggalprojectmasuk"
+                              <label for="email" class="form-label" style="font-size: 0.7em;" style="font-size: 0.7em;">
+                                EMAIL</label>
+                              <input type="text" class="form-control" id="email" placeholder="Enter email client">
+                            </div>
+                            <div class="col">
+                              <label for="phone" class="form-label" style="font-size: 0.7em;">PHONE</label>
+                              <input type="text" class="form-control" id="phone"
                                 placeholder="Enter the client's phone number">
                             </div>
                           </div>
 
-                          <!-- Deadline -->
+                          <!-- Address -->
                           <div class="mb-3">
-                            <label for="deadline" class="form-label">Deadline</label>
-                            <input type="text" class="form-control" id="deadline"
+                            <label for="address" class="form-label" style="font-size: 0.7em;">ADDRESS</label>
+                            <input type="text" class="form-control" id="address"
                               placeholder="Enter the client's company address">
                           </div>
 
@@ -436,21 +448,26 @@
                             <input type="checkbox" class="form-check-input" id="termsCheck">
                             <label class="form-check-label" for="termsCheck">
                               By registering, you agree to the terms and
-                              conditions that apply.
+                              conditions that apply. Check again and make
+                              sure the form is completely filled out.
                             </label>
                           </div>
 
-                          <div class="form-text mb-3">Check again and make
-                            sure the form is completely filled out</div>
-
                           <!-- Submit Button -->
-                          <button type="submit" class="btn btn-dark w-100">Add
-                            Project</button>
+                          <button type="submit" class="btn btn-dark w-100" onclick="showAlert()">Add
+                            Client</button>
                         </form>
                       </div>
                     </div>
                   </div>
                 </div>
+
+                <script>
+                  function showAlert() {
+                    // Menampilkan notifikasi bahwa data berhasil ditambahkan
+                    alert('Data berhasil ditambahkan!');
+                  }
+                </script>
 
                 <!-- Dropdown Button -->
                 <button class="btn btn-dropdown dropdown-toggle srtby" type="button" id="dropdownMenuButton"
